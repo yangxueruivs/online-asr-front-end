@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  
+<button bindtap="start_record" size='mini' class='btn'>开始录音</button>
+{{text_record}}
+<button bindtap="stop" size='mini' class='btn'>停止录音</button>
+<button bindtap="replay" size='mini' class='btn'>播放录音</button>
+{{text_replay}}
+<button bindtap="recognize" size='mini' class='btn'>识别录音</button>
+{{text_recog}}
+<button bindtap="openSetting" size='mini' class='btn'>settings</button>
+</view>
